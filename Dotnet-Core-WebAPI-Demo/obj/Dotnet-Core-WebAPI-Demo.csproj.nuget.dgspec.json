@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Dotnet\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj": {}
+    "G:\\Demo Project\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj": {}
   },
   "projects": {
-    "G:\\Dotnet\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj": {
+    "G:\\Demo Project\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Dotnet\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj",
+        "projectUniqueName": "G:\\Demo Project\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj",
         "projectName": "Dotnet-Core-WebAPI-Demo",
-        "projectPath": "G:\\Dotnet\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj",
+        "projectPath": "G:\\Demo Project\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "G:\\Dotnet\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\obj\\",
+        "outputPath": "G:\\Demo Project\\Dotnet-Core-WebAPI-Demo\\Dotnet-Core-WebAPI-Demo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[8.5.0, )"

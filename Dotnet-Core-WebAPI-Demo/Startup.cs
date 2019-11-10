@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Dotnet_Core_WebAPI_Demo.Data.Interfaces;
 using Dotnet_Core_WebAPI_Demo.Data.Repositories;
 using Dotnet_Core_WebAPI_Demo.DatabaseSettings;
@@ -38,7 +39,11 @@ namespace Dotnet_Core_WebAPI_Demo
             services.AddSingleton<IDatabaseSetting>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSetting>>().Value);
 
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddScoped<IPhotoRepository, PhotoRepository>();
+            services.AddScoped<IConnectionRepository, ConnectionRepository>();
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddJwtBearer(options =>
