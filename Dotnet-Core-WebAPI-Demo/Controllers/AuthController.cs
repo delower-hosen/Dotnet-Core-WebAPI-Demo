@@ -48,6 +48,7 @@ namespace Dotnet_Core_WebAPI_Demo.Controllers
 
             var userToCreate = new User
             {
+                Id = userForRegisterDto.Id,
                 Username = userForRegisterDto.Username,
                 Email = userForRegisterDto.Email
             };

@@ -14,6 +14,7 @@ namespace Dotnet_Core_WebAPI_Demo.Helper
         {
             CreateMap<User, UserForListDto>(); // means you want to map from User to UserForListDtor
             CreateMap<Connection, ConnectionForListDto>();
+            CreateMap<PhotoForCreationDto, Photo>();
         }
     }
 }

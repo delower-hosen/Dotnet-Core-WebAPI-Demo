@@ -9,8 +9,6 @@ namespace Dotnet_Core_WebAPI_Demo.Models
 {
     public class Connection
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public string[] Tags { get; set; }
         public string ParentEntityName { get; set; }

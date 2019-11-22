@@ -363,4 +363,5 @@ G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\obj\Debug\netcor
 G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\obj\Debug\netcoreapp3.0\Dotnet-Core-WebAPI-Demo.pdb
 G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\bin\Debug\netcoreapp3.0\AutoMapper.dll
 G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\bin\Debug\netcoreapp3.0\CloudinaryDotNet.dll
 G:\Demo Project\Dotnet-Core-WebAPI-Demo\Dotnet-Core-WebAPI-Demo\obj\Debug\netcoreapp3.0\Dotnet-Core-WebAPI-Demo.MvcApplicationPartsAssemblyInfo.cache

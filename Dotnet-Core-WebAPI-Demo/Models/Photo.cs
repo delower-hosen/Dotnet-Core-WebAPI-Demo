@@ -9,10 +9,11 @@ namespace Dotnet_Core_WebAPI_Demo.Models
 {
     public class Photo
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        public string PublicId { get; set; }
         public bool IsMain { get; set; }
-        public string Url { get; set; } 
+        public string Url { get; set; }
+        public string Description { get; set; }
+        public DateTime DateAdded { get; set; }
     }
 }

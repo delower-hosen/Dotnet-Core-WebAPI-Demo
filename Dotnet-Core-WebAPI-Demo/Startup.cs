@@ -7,6 +7,7 @@ using AutoMapper;
 using Dotnet_Core_WebAPI_Demo.Data.Interfaces;
 using Dotnet_Core_WebAPI_Demo.Data.Repositories;
 using Dotnet_Core_WebAPI_Demo.DatabaseSettings;
+using Dotnet_Core_WebAPI_Demo.Helper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,6 +40,7 @@ namespace Dotnet_Core_WebAPI_Demo
             services.AddSingleton<IDatabaseSetting>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSetting>>().Value);
 
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
@@ -57,6 +59,12 @@ namespace Dotnet_Core_WebAPI_Demo
             //            ValidateAudience = false
             //        };
             //    });
+
+            services.AddMvc().AddJsonOptions(o =>
+            {
+                o.JsonSerializerOptions.PropertyNamingPolicy = null;
+                o.JsonSerializerOptions.DictionaryKeyPolicy = null;
+            });
 
             services.AddCors();
 

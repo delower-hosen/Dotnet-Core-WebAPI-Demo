@@ -28,9 +28,10 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<User> GetUser()
+        public async Task<User> GetUser(string userId)
         {
-            throw new NotImplementedException();
+            var userInfo = await _user.Find(user => user.Id == userId).FirstOrDefaultAsync();
+            return userInfo;
         }
 
         public async Task<IEnumerable<User>> GetUsers()

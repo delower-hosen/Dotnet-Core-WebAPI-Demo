@@ -33,5 +33,12 @@ namespace Dotnet_Core_WebAPI_Demo.Controllers
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
             return Ok(usersToReturn);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetConnectionList(string id)
+        {
+            var userInfo = await _repo.GetUser(id);
+            return Ok(userInfo);
+        }
     }
 }
