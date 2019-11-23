@@ -40,9 +40,35 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
             return users;
         }
 
-        public Task<bool> SaveAll()
+        public async Task<User> SaveAll(string userId, User userInfo)
         {
-            throw new NotImplementedException();
+            var user = await _user.Find(user => user.Id == userId).FirstOrDefaultAsync();
+            if(user != null)
+            {
+                if(userInfo.Introduction != null)
+                {
+                    user.Introduction = userInfo.Introduction;
+                }
+                if (userInfo.LookingFor != null)
+                {
+                    user.LookingFor = userInfo.LookingFor;
+                }
+                if (userInfo.Interests != null)
+                {
+                    user.Interests = userInfo.Interests;
+                }
+                if (userInfo.City != null)
+                {
+                    user.City = userInfo.City;
+                }
+                if (userInfo.Country != null)
+                {
+                    user.Country = userInfo.Country;
+                }
+            }
+             _user.ReplaceOne(u => u.Id == userId, user);
+            //await _user.ReplaceOne(u => u.Id)
+            return user;
         }
     }
 }

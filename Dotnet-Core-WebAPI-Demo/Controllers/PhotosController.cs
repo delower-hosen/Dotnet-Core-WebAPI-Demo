@@ -23,51 +23,11 @@ namespace Dotnet_Core_WebAPI_Demo.Controllers
     {
         private readonly IPhotoRepository _repo;
         private readonly IMapper _maper;
-        private readonly IOptions<CloudinarySettings> _cloudinaryConfig;
-        private Cloudinary _cloudinary;
 
-        public PhotosController(IPhotoRepository repo, IMapper maper,
-            IOptions<CloudinarySettings> cloudinaryConfig)
+        public PhotosController(IPhotoRepository repo, IMapper maper)
         {
             _repo = repo;
             _maper = maper;
-            _cloudinaryConfig = cloudinaryConfig;
-
-            Account acc = new Account(
-                    _cloudinaryConfig.Value.CloudName,
-                    _cloudinaryConfig.Value.ApiKey,
-                    _cloudinaryConfig.Value.ApiSecret
-                );
-            _cloudinary = new Cloudinary(acc);
-        }
-
-        [HttpPost("{id}")]
-        public IActionResult AddPhotoForUser(string id, PhotoForCreationDto photoForCreationDto)
-        {
-            // Todo: validate user
-
-            var file = photoForCreationDto.File;
-            var uploadResult = new ImageUploadResult();
-
-            if (file.Length > 0)
-            {
-                using (var stream = file.OpenReadStream())
-                {
-                    var uploadParams = new ImageUploadParams()
-                    {
-                        File = new FileDescription(file.Name, stream),
-                        Transformation = new Transformation()
-                            .Width(500).Height(500).Crop("fill").Gravity("face")
-                    };
-                    uploadResult = _cloudinary.Upload(uploadParams);
-                }
-            }
-            photoForCreationDto.Url = uploadResult.Uri.ToString();
-            photoForCreationDto.PublicId = uploadResult.PublicId.ToString();
-
-            var photo = _maper.Map<Photo>(photoForCreationDto);
-
-            return Ok(photo);
         }
 
         [HttpGet("{id}")]

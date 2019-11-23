@@ -31,7 +31,7 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
 
         public async Task<IEnumerable<Photo>> GetPhotos(string ChildEntityId)
         {
-            var photos = await _photo.Find(p => p.Id == ChildEntityId).ToListAsync();
+            var photos = await _photo.Find(P => true).ToListAsync();
             return photos;
         }
     }

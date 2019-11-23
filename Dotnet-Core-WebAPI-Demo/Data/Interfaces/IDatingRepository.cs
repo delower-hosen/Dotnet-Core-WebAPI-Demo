@@ -10,7 +10,7 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Interfaces
     {
         void Add<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;
-        Task<bool> SaveAll();
+        Task<User> SaveAll(string id, User userInfo);
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(string id);
     }

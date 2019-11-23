@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Dotnet_Core_WebAPI_Demo.Data.Interfaces;
 using Dotnet_Core_WebAPI_Demo.Dtos;
+using Dotnet_Core_WebAPI_Demo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +40,17 @@ namespace Dotnet_Core_WebAPI_Demo.Controllers
         {
             var userInfo = await _repo.GetUser(id);
             return Ok(userInfo);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUsers(string id, User userInfo)
+        {
+            var user = await _repo.SaveAll(id, userInfo);
+            if(user == null)
+            {
+                return NoContent();
+            }
+            return Ok(user);
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Dotnet_Core_WebAPI_Demo.Models
     {
         public string Id { get; set; }
         public string Username { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
@@ -21,6 +23,7 @@ namespace Dotnet_Core_WebAPI_Demo.Models
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public string Introduction { get; set; }
+        public string ProfilePhoto { get; set; }
         public string LookingFor { get; set; }
         public string Interests { get; set; }
         public string City { get; set; }
