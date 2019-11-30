@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Dotnet_Core_WebAPI_Demo.Data.Interfaces;
 using Dotnet_Core_WebAPI_Demo.Dtos;
+using Dotnet_Core_WebAPI_Demo.Helper;
 using Dotnet_Core_WebAPI_Demo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Dotnet_Core_WebAPI_Demo.Controllers
 {
+    //[ServiceFilter(typeof(LogUserActivity))]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase

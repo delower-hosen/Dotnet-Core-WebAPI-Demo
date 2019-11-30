@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
 {
-    public class DatingRepository: IDatingRepository
+    public class DatingRepository : IDatingRepository
     {
         private readonly IMongoCollection<User> _user;
         public DatingRepository(IDatabaseSetting settings)
@@ -43,9 +43,9 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
         public async Task<User> SaveAll(string userId, User userInfo)
         {
             var user = await _user.Find(user => user.Id == userId).FirstOrDefaultAsync();
-            if(user != null)
+            if (user != null)
             {
-                if(userInfo.Introduction != null)
+                if (userInfo.Introduction != null)
                 {
                     user.Introduction = userInfo.Introduction;
                 }
@@ -65,9 +65,16 @@ namespace Dotnet_Core_WebAPI_Demo.Data.Repositories
                 {
                     user.Country = userInfo.Country;
                 }
+                if (userInfo.ProfilePhoto != null)
+                {
+                    user.ProfilePhoto = userInfo.ProfilePhoto;
+                }
+                if(userInfo.LastActive != null)
+                {
+                    user.LastActive = userInfo.LastActive;
+                }
             }
-             _user.ReplaceOne(u => u.Id == userId, user);
-            //await _user.ReplaceOne(u => u.Id)
+            _user.ReplaceOne(u => u.Id == userId, user);
             return user;
         }
     }

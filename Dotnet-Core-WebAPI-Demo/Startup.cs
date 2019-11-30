@@ -46,6 +46,7 @@ namespace Dotnet_Core_WebAPI_Demo
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddScoped<IPhotoRepository, PhotoRepository>();
             services.AddScoped<IConnectionRepository, ConnectionRepository>();
+            //services.AddScoped<LogUserActivity>();
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddJwtBearer(options =>

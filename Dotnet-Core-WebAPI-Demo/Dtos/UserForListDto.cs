@@ -10,5 +10,6 @@ namespace Dotnet_Core_WebAPI_Demo.Dtos
         public string Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
+        public string ProfilePhoto { get; set; }
     }
 }
